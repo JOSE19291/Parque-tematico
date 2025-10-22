@@ -16,8 +16,8 @@ public class BilleteraParque {
         return tickets;
     }
 
-    public void setTickets(int tickets) {
-        this.tickets = tickets;
+    public void setTickets(int cantidad) {
+        this.tickets = cantidad;
     }
 
     public static boolean getFestivo() {
@@ -33,21 +33,17 @@ public class BilleteraParque {
         }
     }
 
-    public void agregarTickets(int tickets) {
-        if (festivo == true) {
-            setTickets(tickets);
-        } else {
-
-        }
+    public void agregarTickets(int cantidad) {
+        this.tickets += cantidad;
     }
 
     public boolean removerTickets(int tickets) {
-        if (festivo == true) {
-            removerTickets(tickets);
+        if (this.tickets >= tickets) {
+            this.tickets -= tickets;
             return true;
         } else {
             return false;
         }
-    }
 
+    }
 }
