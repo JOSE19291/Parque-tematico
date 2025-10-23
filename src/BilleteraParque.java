@@ -4,46 +4,45 @@ public class BilleteraParque {
     private static boolean festivo = false;
 
     public BilleteraParque() {
-        this.tickets = 0;
+        this.tickets = 0; //
     }
 
-    public BilleteraParque(int tickets, boolean festivo) {
+    public BilleteraParque(int tickets) {
         this.tickets = tickets;
-        this.festivo = festivo;
     }
 
     public int getTickets() {
         return tickets;
     }
 
-    public void setTickets(int cantidad) {
-        this.tickets = cantidad;
-    }
-
     public static boolean getFestivo() {
         return festivo;
     }
 
-    public static void setFestivo() {
+    public void setTickets(int cantidad) {
 
-        if (festivo == false) {
-            festivo = true;
-        } else {
-            festivo = false;
+        if (cantidad >= 0) {
+            this.tickets = cantidad;
         }
     }
 
+    public static void setFestivo() {
+        festivo = !festivo;
+    }
+
     public void agregarTickets(int cantidad) {
-        this.tickets += cantidad;
+        if (cantidad >= 0) {
+            this.tickets += cantidad;
+        }
     }
 
     public boolean removerTickets(int cantidad) {
-        if (this.tickets >= tickets) {
+
+        if (cantidad >= 0 && this.tickets >= cantidad) {
             this.tickets -= cantidad;
             return true;
         } else {
             return false;
         }
-
     }
 }
