@@ -37,9 +37,9 @@ public class BilleteraParque {
         this.tickets += cantidad;
     }
 
-    public boolean removerTickets(int tickets) {
+    public boolean removerTickets(int cantidad) {
         if (this.tickets >= tickets) {
-            this.tickets -= tickets;
+            this.tickets -= cantidad;
             return true;
         } else {
             return false;
